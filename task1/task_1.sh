@@ -23,7 +23,7 @@ no_lines=2
 for dir in $directories; do
   for file in "$dir"/*.log; do
     echo "$file"
-    if [ -f "$file" ] && [ $(stat -c %s "$file") -gt 0 ]; then
+    if [ -f "$file" ] && [ $(stat -c %s "$file") -gt 1000 ]; then
       tail -n "$no_lines" "$file" > "$file.new"
       mv "$file.new" "$file"
       echo "Processed: $file"

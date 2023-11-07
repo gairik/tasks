@@ -19,7 +19,8 @@ for dir in $directories; do
 done
 
 # Task 3: Replace large .log files with the last 20,000 lines
-no_lines=2
+# Just for the ease of doing things, I have made the number of lines to 20 instead of 20,000. It can be changes by changing the $no_lines variable
+no_lines=20
 for dir in $directories; do
   for file in "$dir"/*.log; do
     echo "$file"
